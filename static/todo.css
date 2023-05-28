@@ -1,0 +1,249 @@
+@keyframes move-it-background {
+  0% {
+    background-position: -100px 0;
+  }
+  50% {
+    background-position: 50px 0;
+  }
+  100% {
+    background-position: 200px 0;
+  }
+}
+
+@keyframes move-it-elements {
+  0% {
+    transform: translateX(0);
+  }
+  25% {
+    transform: translateX(10px) rotateZ(2deg);
+  }
+  50% {
+    transform: translateX(0) rotateZ(0);
+  }
+  75% {
+    transform: translateX(-10px) rotateZ(-2deg);
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
+
+body {
+  background: linear-gradient(
+    135deg,
+    #667eea,
+    #764ba2,
+    #6B8DD6,
+    #8E44AD,
+    #0e182a
+      overflow-y: scroll;
+
+  );
+  background-size: 400% 400%;
+  animation: move-it-background 6s ease-in-out infinite;
+  color: #fff;
+  font-family: 'Open Sans', sans-serif;
+  font-size: 18px;
+  line-height: 1.6;
+  text-align: center;
+  overflow: hidden;
+}
+
+body:before {
+  content: "";
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: -1;
+  background: linear-gradient(
+    45deg,
+    #606dbc,
+    #606dbc 25%,
+    #465298 25%,
+    #465298 50%
+  );
+  background-size: 150% 150%;
+  animation: move-it-elements 6s ease-in-out infinite;
+}
+
+h1 {
+  font-size: 4rem;
+  font-weight: 700;
+  letter-spacing: -1px;
+  margin-bottom: 2rem;
+}
+
+
+
+
+h1 {
+  font-family: 'Roboto', sans-serif;
+  font-size: 4rem;
+  font-weight: 900;
+  text-align: center;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: #333;
+  margin: 0 0 2rem;
+  text-shadow: 2px 2px 0 rgba(255, 255, 255, 0.5), 3px 3px 0 rgba(247, 247, 247, 0.5);
+  background-image: linear-gradient(to right, #f8f8f8 50%, transparent 50%);
+  background-size: 200% 100%;
+  transition: all 0.5s ease-in-out;
+}
+
+h1:hover {
+  background-position: -100% 0;
+  color: #fff;
+  text-shadow: 2px 2px 0 rgba(0, 0, 0, 0.5), 3px 3px 0 rgba(0, 0, 0, 0.5);
+}
+
+ul {
+  list-style: none;
+  width: 100%;
+  padding: 0;
+}
+
+li {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 0.2rem solid #333;
+  margin: 1rem 0;
+  padding-bottom: 1rem;
+}
+
+input {
+  border-radius: 0.3rem;
+  border: 1px solid #333;
+  padding: 0.3rem;
+}
+
+.header button {
+  border-radius: 0.3rem;
+  border: 1px solid #333;
+  padding: 0.5rem 1rem;
+  background: light-grey;
+  transition: background-color 0.3s ease;
+  color: #333;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.header button:hover {
+  background-color: rgba(0, 0, 0, 0.4);
+}
+
+div.todo__app {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+
+div.header {
+  width: 80%;
+  border: 1px solid #333;
+  border-radius: 0.5rem;
+  margin: 1rem;
+  padding: 1.5rem;
+  background: rgba(0, 0, 0, 0.1);
+}
+
+div.header form {
+  width: 100%;
+  display: flex;
+}
+
+div.header form div.input {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  margin-right: 1rem;
+}
+
+.opened_todo,
+.closed_todo {
+  width: 80%;
+  border: 1px solid #333;
+  border-radius: 0.5rem;
+  margin: 1rem;
+  padding: 1.5rem;
+  background: rgba(0, 0, 0, 0.1);
+  display: flex;
+  align-items: center;
+}
+
+.open {
+  background-color: transparent;
+  color: black;
+  border: none;
+  background-image: url("assets/open.svg");
+  background-size: 100% 100%;
+  cursor: pointer;
+  margin: 0 1rem;
+  height: 1.5rem;
+  width: 1.5rem;
+}
+
+.finished {
+  background-color: transparent;
+  color: black;
+  border: none;
+  background-image: url("assets/closed.svg");
+  background-size: 100% 100%;
+  cursor: pointer;
+  margin: 0 1rem;
+  height: 1.5rem;
+  width: 1.5rem;
+}
+
+.delete {
+  background-color: transparent;
+  color: black;
+  border: none;
+  background-image: url("assets/delete.svg");
+  background-size: 100% 100%;
+  cursor: pointer;
+  margin: 0 1rem;
+  height: 1.5rem;
+  width: 1.5rem;
+}
+
+.content {
+  width: 80%;
+}
+
+.content h1 {
+  font-size: 1.2rem;
+  margin: 0 0 0.2rem;
+}
+
+.content p {
+  margin: 0;
+}
+
+.toggle_button {
+  border: none;
+  background: transparent;
+  cursor: pointer;
+  margin-bottom: 1rem;
+}
+
+.filter {
+  border: 0.1rem solid #333;
+  border-radius: 0.3rem;
+  background: transparent;
+  padding: 0.3rem;
+}
+
+div.open_header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+

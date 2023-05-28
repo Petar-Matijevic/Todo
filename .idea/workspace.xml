@@ -4,11 +4,20 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="a666a13a-d94e-4d26-a57a-20ac90db10da" name="Changes" comment="" />
+    <list default="true" id="a666a13a-d94e-4d26-a57a-20ac90db10da" name="Changes" comment="New version">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$" value="master" />
+      </map>
+    </option>
   </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
@@ -22,7 +31,7 @@
   <component name="PropertiesComponent">{
   &quot;keyToString&quot;: {
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/Users/Tempest/PycharmProjects/TodoApp&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/Tempest/PycharmProjects/Todo&quot;,
     &quot;settings.editor.selected.configurable&quot;: &quot;project.propVCSSupport.DirectoryMappings&quot;
   }
 }</component>
@@ -196,6 +205,74 @@
       <option name="presentableId" value="Default" />
       <updated>1683921973503</updated>
     </task>
+    <task id="LOCAL-00001" summary="New version">
+      <created>1685300734947</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1685300734947</updated>
+    </task>
+    <task id="LOCAL-00002" summary="New version">
+      <created>1685300752938</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1685300752938</updated>
+    </task>
+    <task id="LOCAL-00003" summary="New version">
+      <created>1685300771596</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1685300771596</updated>
+    </task>
+    <task id="LOCAL-00004" summary="New version">
+      <created>1685300772891</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1685300772891</updated>
+    </task>
+    <task id="LOCAL-00005" summary="New version">
+      <created>1685300779290</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1685300779290</updated>
+    </task>
+    <task id="LOCAL-00006" summary="New version">
+      <created>1685300780060</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1685300780060</updated>
+    </task>
+    <task id="LOCAL-00007" summary="New version">
+      <created>1685300780773</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1685300780773</updated>
+    </task>
+    <task id="LOCAL-00008" summary="New version">
+      <created>1685300780991</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1685300780991</updated>
+    </task>
+    <task id="LOCAL-00009" summary="New version">
+      <created>1685300785783</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1685300785783</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="New version" />
+    <option name="LAST_COMMIT_MESSAGE" value="New version" />
   </component>
 </project>

@@ -1,0 +1,38 @@
+{% extends "layout.html" %}
+{% block head_title %}<title>sign</title> {% endblock %}
+    <!--
+    <link rel="stylesheet" href="http://yui.yahooapis.com/pure/0.6.0/pure-min.css">
+
+    <link rel="stylesheet" href="../static/css/pure-min.css">
+    -->
+{% block body_content %}
+<br>
+<h2 class="center"> Todo Sign</h2>
+<br>
+<form action="/sign" method="post" class="pure-form pure-form-aligned">
+    <fieldset>
+        <div class="pure-control-group">
+            <label for="username">username</label>
+            <input id="username" type="text" name="username">
+        </div>
+        <div class="pure-control-group">
+            <label for="email">email</label>
+            <input id="email" type="text" name="email">
+        </div>
+        <div class="pure-control-group">
+            <label for="password1">password</label>
+            <input id="password1" type="password" name="password1">
+        </div>
+        <div class="pure-control-group">
+            <label for="password">reput password</label>
+            <input id="password" type="password" name="password">
+        </div>
+        <div class="pure-controls">
+            <label for="cb" class="pure-checkbox">
+                <input id="cb" type="checkbox"> I've read the terms and conditions
+            </label>
+            <button type="submit" class="pure-button pure-button-primary">Submit</button>
+        </div>
+    </fieldset>
+
+    {% endblock %}

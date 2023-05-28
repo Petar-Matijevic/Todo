@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>To Do</title>
+  <link rel="stylesheet" href="{{url_for('static', filename='todo.css')}}">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+  <style>
+    table tr:hover td:nth-child(1),
+    table tr:hover td:nth-child(2) {
+      background-color: #f5f5f5;
+      color: #333;
+    }
+    .filter-container {
+      display: flex;
+      align-items: center;
+    }
+    .filter-label {
+      margin-right: 1rem;
+    }
+    body {
+      overflow-y: scroll;
+    }
+  </style>
+</head>
+
+<body>
+  <h1>To do list</h1>
+  <div class="todo__app">
+
+    <div class="header">
+      <form action="/add" method="POST">
+        <div class="input">
+          <div>
+            <label for="value"><b>Todo:</b></label>
+            <input type="text" id="value" name="value" placeholder="">
+          </div>
+          <div>
+            <label for="deadline"><b>Deadline:</b>:</label>
+            <input type="date" id="deadline" name="deadline" placeholder="">
+          </div>
+          <div>
+            <label for="priority"><b>Priority:</b></label>
+            <input type="number" id="priority" name="priority" value="1" min="1" max="5">
+          </div>
+        </div>
+        <button type="submit"><b>Add</b></button>
+      </form>
+    </div>
+
+    <div class="open_header">
+      <h1>Active Todos</h1>
+      <div class="filter-container">
+        <label for="filter" class="filter-label"><b>Filter:</b></label>
+        <select class="filter" id="filter">
+          <option disabled selected hidden>No sorting available</option>
+          {% for filter in filters %}
+          <option value="{{ filter.value }}" {% if filter.value == activeFilter %}selected{% endif %}>{{ filter.label }}</option>
+          {% endfor %}
+        </select>
+      </div>
+    </div>
+
+    <div class="opened_todo">
+      <ul>
+        {% for todo in todos %}
+        <li>
+          <form action="/todo/finish/{{ todo.id }}" method="POST" style="display: inline;">
+            <button class="open" type="submit"></button>
+          </form>
+          <div class="content">
+            <h2>{{ todo.value }}</h2>
+            {% if todo.deadline %}
+            <p>(Start: {{ todo.start }} - Deadline: {{ todo.deadline }})</p>
+            {% else %}
+            <p>(Start: {{ todo.start }})</p>
+            {% endif %}
+          </div>
+          <h4>Priority: {{ todo.priority }}</h4>
+                <form action="/remove/{{ todo.id }}" method="POST" style="display: inline;">
+            <button class="delete" type="submit"></button>
+          </form>
+        </li>
+        {% endfor %}
+      </ul>
+    </div>
+
+    <button class="toggle_button"><h1>Archived Todos ▲</h1></button>
+
+    <div class="closed_todo">
+      <ul>
+        {% for todo in closed_todos %}
+        <li>
+          <form action="/todo/reopen/{{ todo.id }}" method="POST" style="display: inline;">
+            <button class="finished" type="submit"></button>
+          </form>
+          <div class="content">
+            <h2>{{ todo.value }}</h2>
+            <p>(Start: {{ todo.start }} - Completed: {{ todo.end }})</p>
+          </div>
+          <h4>Priority: {{ todo.priority }}</h4>
+          <form action="/remove/{{ todo.id }}" method="POST" style="display: inline;">
+            <button class="delete" type="submit"></button>
+          </form>
+        </li>
+        {% endfor %}
+      </ul>
+    </div>
+  </div>
+</div>
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script>
+  $(document).ready(function () {
+    $('.closed_todo').hide();
+    $('.toggle_button').click(function () {
+      $('.closed_todo').toggle();
+      var buttonHtml = $('.toggle_button').html();
+      if (buttonHtml === '<h1>Closed Todos ▲</h1>') {
+        $('.toggle_button').html('<h1>Archived Todos ▼</h1>');
+      } else {
+        $('.toggle_button').html('<h1>Archived Todos ▲</h1>');
+      }
+    });
+    $('.filter').change(function () {
+      var selectedOption = $(this).children("option:selected").val();
+      $.ajax({
+        type: "POST",
+        url: "/filter/" + selectedOption,
+        success: function () {
+          location.reload();
+        }
+      });
+    });
+  });
+</script>
+</body>
+
+</html>
+
